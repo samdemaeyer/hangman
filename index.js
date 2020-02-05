@@ -1,13 +1,15 @@
-let timing = 0;
+const wordToGuess = 'codebar'
+let wrongAttempts = 1;
 
-const startHangman = () => {
-  document.querySelectorAll('.piece').forEach(p => setTimeout(() => p.style.display = 'block', timing += 750));
-}
-
-setInterval(() => {
-  timing = 0;
-  document.querySelectorAll('.piece').forEach(p => p.style.display = 'none');
-  startHangman();
-}, 10000);
-
-startHangman();
+document.querySelector('.letter-input').addEventListener('keydown', (event) => {
+  if (event.keyCode === 13) {
+    const valueIndex = wordToGuess.split('').indexOf(event.target.value)
+    if (valueIndex > -1) {
+      document.querySelectorAll('.letter')[valueIndex].innerText = event.target.value
+    } else {
+      document.querySelector(`.piece-${wrongAttempts}`).classList.add('isVisible')
+      wrongAttempts++
+    }
+    event.target.value = ''
+  }
+})
