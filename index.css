@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+  color: #317e9c;
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
   background: #232323;
 }
-
 
 .wrapper {
   display: flex;
@@ -25,7 +31,6 @@ body {
   width: 3.5rem;
   height: 3.5rem;
   border: 2px solid #317e9c;
-  color: #317e9c;
   font-size: 3.5rem;
   text-align: center;
   text-transform: capitalize;
@@ -38,7 +43,6 @@ body {
 
 .word-wrapper .letter {
   font-size: 3rem;
-  color: #317e9c;
   border-bottom: 2px solid #317e9c;
   margin: 0 0.3rem;
   padding: 0 0.2rem;
@@ -128,6 +132,10 @@ body {
   transform: rotate(45deg);
 }
 
-.isVisible {
+.is-visible {
   display: block;
+}
+
+.end-game-text {
+  font-size: 2rem;
 }
